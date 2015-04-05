@@ -23,11 +23,10 @@ class ser(gras.Block):
         except:
             print "Couldn't Open Serial Port " + port + " Failed"
 
-        # Pipe names                                                               |    def __init__(self, pipe_name, port, baud, bytesize, parity, stopbits):         
-        self.pipe_name = pipe_name                                                 |        gras.Block.__init__(self,                                                  
-                                                                                   |            name="ser",
-        # Pipe templates                                                           |            in_sig=[numpy.float32],
-        self.pipe_template = pipes.Template()                                      |            out_sig=[numpy.float32])
+        # Pipe names
+        self.pipe_name = pipe_name
+        # Pipe templates
+        self.pipe_template = pipes.Template()
         self.pipe_template.append('tr a-z A-Z', '--')
 
         self.n = 1

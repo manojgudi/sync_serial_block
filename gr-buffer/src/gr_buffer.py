@@ -47,7 +47,7 @@ class BufferBlock(gras.Block):
         '''
 
         if self.queue.full():
-            print "Buffer Full Throw Exception"
+            raise OverflowError('Queue buffer full!')
         else:
            self.queue.put(input_items[0])
 
